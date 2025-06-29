@@ -1,0 +1,29 @@
+name: Build Dye & Durham assessment code and run unit tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Restore project dependencies
+      run: dotnet restore ./NameSorter/name-sorter.csproj
+
+    - name: Build project (linters disabled to reduce noise)
+      run: dotnet build ./NameSorter/name-sorter.csproj --no-restore --configuration Release /p:UseRoslynAnalyzers=false
+
+    - name: Run tests
+      run: dotnet test ./NameSorter/name-sorter.csproj --no-build --configuration Release --verbosity normal
