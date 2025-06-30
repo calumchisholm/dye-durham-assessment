@@ -16,9 +16,7 @@ namespace NameSorter
         /// <summary>
         /// Sorts a sequence of IName by surname then by forenames.
         /// </summary>
-        /// 
         /// <param name="names">A collection of names to sort.</param>
-        /// 
         /// <returns>An ordered sequence of names, sorted by surname and then forenames.</returns>
         public IEnumerable<IName> Sort(IEnumerable<IName> names)
         {

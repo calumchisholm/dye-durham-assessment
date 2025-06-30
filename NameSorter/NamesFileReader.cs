@@ -11,11 +11,8 @@ namespace NameSorter
         /// <summary>
         /// Reads all lines from the specified file as a lazily-evaluated enumerable.
         /// </summary>
-
         /// <param name="filePath">The path to the text file to read.</param>
-
         /// <returns>An IEnumerable of strings, each representing a line from the file.</returns>
-
         /// <exception cref="ArgumentException">Thrown if the file path is null, empty or whitespace.</exception>
         /// <exception cref="FileNotFoundException">Thrown if the specified file does not exist.</exception>
         public IEnumerable<string> ReadLines(string filePath)

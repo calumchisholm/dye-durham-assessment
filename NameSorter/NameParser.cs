@@ -12,11 +12,8 @@ namespace NameSorter
         /// Parses a line of input into an IName instance.
         /// The final word is treated as the surname; all preceding words are treated as forenames.
         /// </summary>
-        /// 
         /// <param name="input">A single line of text containing a name</param>
-        /// 
         /// <returns>A Name struct representing the parsed name</returns>
-        /// 
         /// <exception cref="ArgumentException">Thrown when input is null, empty, or whitespace</exception>
         /// <exception cref="InvalidOperationException">Defensive fallback if name parts are unexpectedly empty</exception>
         public IName Parse(string input)

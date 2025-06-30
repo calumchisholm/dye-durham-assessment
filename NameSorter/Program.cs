@@ -62,7 +62,7 @@
                 var sortedNames = sorter.Sort(allNames);
 
                 // Open a new writer, creating or (if it already exists) overwriting the output file.
-                using (INamesWriter writer = new NamesWriter(OutputFile))
+                using (INamesFileWriter writer = new NamesFileWriter(OutputFile))
                 {
                     // Write the sorted list of names, also echoing them to the console.
                     writer.Write(sortedNames, true);
